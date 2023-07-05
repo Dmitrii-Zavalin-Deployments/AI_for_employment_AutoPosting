@@ -51,7 +51,8 @@ async function postTweet(data) {
     console.log(tweet.data.id);
 }
 */
-main() {
+main()
+async function main() {
   const runNumber = process.env.GITHUB_RUN_NUMBER;
   console.log("This is run number " + runNumber);
 }
