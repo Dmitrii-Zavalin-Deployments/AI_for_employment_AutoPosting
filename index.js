@@ -50,17 +50,17 @@ async function ChosenPost(PostsArrayLength) {
 
 async function PostTweet(data) {
 
-    const PostData = await generateHashtagWithDate();
+    const PostData = await GenerateHashtagWithDate();
     const TwitterPost = data + " " + PostData;
     console.log(TwitterPost);
     // Use the v2 tweet method to post a tweet with text
     const tweet = await client.v2.tweet(TwitterPost);
 
     // Log the tweet ID and URL
-    console.log(tweet.TwitterPost.id);
+    console.log(tweet.data.id);
 }
 
-async function generateHashtagWithDate() {
+async function GenerateHashtagWithDate() {
     return new Promise((resolve) => {
         const isoDate = new Date().toISOString();
         const year = isoDate.slice(0, 4);
