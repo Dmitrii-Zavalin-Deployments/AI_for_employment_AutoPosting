@@ -1,3 +1,4 @@
+/*
 // Import the libraries
 const pantry = require('pantry-node');
 const { TwitterApi } = require('twitter-api-v2');
@@ -48,4 +49,9 @@ async function postTweet(data) {
 
     // Log the tweet ID and URL
     console.log(tweet.data.id);
+}
+*/
+main() {
+  const runNumber = process.env.GITHUB_RUN_NUMBER;
+  console.log("This is run number " + runNumber);
 }
