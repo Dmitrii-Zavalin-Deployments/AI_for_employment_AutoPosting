@@ -54,10 +54,10 @@ async function PostTweet(data) {
     const TwitterPost = data + " " + PostData;
     console.log(TwitterPost);
     // Use the v2 tweet method to post a tweet with text
-    //const tweet = await client.v2.tweet(TwitterPost);
+    const tweet = await client.v2.tweet(TwitterPost);
 
     // Log the tweet ID and URL
-    //console.log(tweet.TwitterPost.id);
+    console.log(tweet.TwitterPost.id);
 }
 
 async function generateHashtagWithDate() {
