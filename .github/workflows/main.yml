@@ -1,5 +1,9 @@
 name: Run node.js code
-on: push # Trigger the workflow on push events
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0,12 * * *' # every day at 00:00 and 12:00
 jobs:
   run-code:
     runs-on: ubuntu-latest # Use the latest Ubuntu image
