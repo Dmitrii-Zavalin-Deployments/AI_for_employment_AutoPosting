@@ -49,9 +49,26 @@ async function ChosenPost(PostsArrayLength) {
 }
 
 async function PostTweet(data) {
+
+    const PostData = await generateHashtagWithDate();
+    const TwitterPost = data + " " + PostData;
+    console.log(TwitterPost);
     // Use the v2 tweet method to post a tweet with text
-    const tweet = await client.v2.tweet(data);
+    //const tweet = await client.v2.tweet(TwitterPost);
 
     // Log the tweet ID and URL
-    console.log(tweet.data.id);
+    //console.log(tweet.TwitterPost.id);
+}
+
+async function generateHashtagWithDate() {
+    return new Promise((resolve) => {
+        const isoDate = new Date().toISOString();
+        const year = isoDate.slice(0, 4);
+        const month = isoDate.slice(5, 7);
+        const day = isoDate.slice(8, 10);
+        const hour = isoDate.slice(11, 13);
+        const minute = isoDate.slice(14, 16);
+        const hashtag = '#' + year + month + day + hour + minute;
+        resolve(hashtag)
+    })
 }
