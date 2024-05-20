@@ -2,8 +2,8 @@ name: Run node.js code
 on:
   push:
     branches: [ main ]
-  schedule:
-    - cron: '30 * * * *' # every hour on the 30th minute
+  # schedule:
+    # - cron: '30 * * * *' # every hour on the 30th minute
 jobs:
   run-code:
     runs-on: ubuntu-latest # Use the latest Ubuntu image
